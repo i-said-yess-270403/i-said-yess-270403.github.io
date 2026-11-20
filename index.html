@@ -244,7 +244,7 @@ const CONFIG = {
   hall: "",                                   // 예: "중앙홀" / "야외 정원"
   address: "서울특별시 중구 퇴계로26길 65",
 
-  mainPhoto: "",                              // 예: "images/main.jpg"
+  mainPhoto: "images/main.jpg",
   mapPhoto: "",                               // 약도 이미지가 있으면 "images/map.jpg"
 
   poem: "",                                    // 첫머리 글귀(시 구절 등). 비우면 생략
@@ -256,7 +256,8 @@ const CONFIG = {
 저희의 새로운 시작을 함께 축복해 주시면
 더없는 기쁨으로 간직하겠습니다.`,
 
-  gallery: ["", "", "", "", "", "", "", "", ""],  // 예: ["images/01.jpg", "images/02.jpg", ...]
+  // 갤러리: images/01.jpg ~ 07.jpg (목록의 썸네일은 images/thumb/ 에 있는 작은 사진을 씁니다)
+  gallery: ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg"],
   galleryInitial: 9,                          // 처음에 보여줄 사진 수 (나머지는 '더보기')
 
   maps: [
@@ -265,8 +266,7 @@ const CONFIG = {
   ],
 
   transport: [
-    { title: "지하철", text: "(예) ○호선 ○○역 ○번 출구 도보 ○분" },
-    { title: "버스",   text: "(예) ○○번 ○○ 정류장 하차" },
+    { title: "지하철", text: "4호선 명동역 1번 출구 도보 11분\n3·4호선 충무로역 4번 출구 도보 13분" },
   ],
 
   // 🚗 주차 안내 (예식장 주차장이 아닌 별도 주차장 — 강조 박스로 표시됩니다)
@@ -281,15 +281,11 @@ const CONFIG = {
   accountNote:
 `참석이 어려우신 분들을 위해 기재했습니다.
 너그러운 마음으로 양해 부탁드립니다.`,
+  // 계좌번호: 비워 두면 '마음 전하실 곳' 섹션이 숨겨집니다. 나중에 아래 형식으로 추가하세요.
+  // { who: "신랑 김창혁", bank: "○○은행", number: "000-0000-0000" }
   accounts: {
-    groom: [
-      { who: "신랑 김창혁", bank: "○○은행", number: "000-0000-0000" },
-      { who: "아버지 김윤도", bank: "○○은행", number: "000-0000-0000" }
-    ],
-    bride: [
-      { who: "신부 차유진", bank: "○○은행", number: "000-0000-0000" },
-      { who: "어머니 고은희", bank: "○○은행", number: "000-0000-0000" }
-    ]
+    groom: [],
+    bride: []
   },
 
   linksTitle: "함께 보면 좋은 곳",
@@ -364,7 +360,7 @@ tick(); setInterval(tick, 1000);
 const G = CONFIG.gallery;
 let shown = Math.min(G.length, CONFIG.galleryInitial || G.length);
 function renderGallery(){
-  $('gallery').innerHTML = G.slice(0, shown).map((src,i)=>`<button data-i="${i}" aria-label="사진 ${i+1} 크게 보기">${photo(src, '사진 '+(i+1), String(i+1))}</button>`).join('');
+  $('gallery').innerHTML = G.slice(0, shown).map((f,i)=>`<button data-i="${i}" aria-label="사진 ${i+1} 크게 보기">${photo(f ? 'images/thumb/'+f : '', '사진 '+(i+1), String(i+1))}</button>`).join('');
   $('more').hidden = shown >= G.length;
 }
 if (!G.length) $('sec-gallery').hidden = true; else renderGallery();
@@ -372,7 +368,7 @@ $('more').onclick = () => { shown = G.length; renderGallery(); };
 let cur = 0;
 const openLb = i => { cur = i; drawLb(); $('lb').classList.add('open'); document.body.style.overflow='hidden'; };
 const closeLb = () => { $('lb').classList.remove('open'); document.body.style.overflow=''; };
-const drawLb = () => { $('lb-stage').innerHTML = photo(G[cur], '사진 '+(cur+1), String(cur+1)); $('lb-bar').textContent = `${cur+1} / ${G.length}`; };
+const drawLb = () => { $('lb-stage').innerHTML = photo(G[cur] ? 'images/'+G[cur] : '', '사진 '+(cur+1), String(cur+1)); $('lb-bar').textContent = `${cur+1} / ${G.length}`; };
 const step = d => { cur = (cur + d + G.length) % G.length; drawLb(); };
 $('gallery').onclick = e => { const b = e.target.closest('button'); if (b) openLb(+b.dataset.i); };
 $('lb-x').onclick = closeLb; $('lb-prev').onclick = () => step(-1); $('lb-next').onclick = () => step(1);
