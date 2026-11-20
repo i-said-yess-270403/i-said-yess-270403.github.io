@@ -102,15 +102,6 @@
   .transport h3{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--accent)}
   .transport p{font-size:15px;white-space:pre-line}
 
-  /* 오시는 길 양옆 덩굴 장식 (직접 그린 선화) */
-  .deco{position:relative;padding-left:44px;padding-right:44px}
-  .deco::before,.deco::after{content:'';position:absolute;top:40px;bottom:40px;width:24px;
-    background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%20140%22%20fill%3D%22none%22%20stroke%3D%22%231f4a36%22%20stroke-width%3D%22.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M12%200C5%2023%2019%2047%2012%2070C5%2093%2019%20117%2012%20140%22/%3E%20%3Cpath%20d%3D%22M9.5%2022c-6-1-8.5-6-8.5-11c5%201%208%205%208.5%2011z%22/%3E%3Cpath%20d%3D%22M9.5%2022C6%2018%204%2015%201%2011%22/%3E%20%3Cpath%20d%3D%22M14.6%2052c6-1%208.4-6%208.4-11c-5%201-8%205-8.4%2011z%22/%3E%3Cpath%20d%3D%22M14.6%2052c3.4-4%205.4-7%208.4-11%22/%3E%20%3Cpath%20d%3D%22M9.5%2092c-6-1-8.5-6-8.5-11c5%201%208%205%208.5%2011z%22/%3E%3Cpath%20d%3D%22M9.5%2092C6%2088%204%2085%201%2081%22/%3E%20%3Cpath%20d%3D%22M14.6%20122c6-1%208.4-6%208.4-11c-5%201-8%205-8.4%2011z%22/%3E%3Cpath%20d%3D%22M14.6%20122c3.4-4%205.4-7%208.4-11%22/%3E%20%3Cpath%20d%3D%22M11%2038c-2.5%201-4%203-4%205.5%22/%3E%3Ccircle%20cx%3D%226.6%22%20cy%3D%2245%22%20r%3D%221.6%22/%3E%3Ccircle%20cx%3D%226.6%22%20cy%3D%2245%22%20r%3D%22.4%22%20fill%3D%22%231f4a36%22/%3E%20%3Cpath%20d%3D%22M13%20108c2.5%201%204%203%204%205.5%22/%3E%3Ccircle%20cx%3D%2217.4%22%20cy%3D%22115%22%20r%3D%221.6%22/%3E%3Ccircle%20cx%3D%2217.4%22%20cy%3D%22115%22%20r%3D%22.4%22%20fill%3D%22%231f4a36%22/%3E%20%3Ccircle%20cx%3D%2215.5%22%20cy%3D%2270%22%20r%3D%22.7%22%20fill%3D%22%231f4a36%22/%3E%3Ccircle%20cx%3D%228.5%22%20cy%3D%220%22%20r%3D%22.7%22%20fill%3D%22%231f4a36%22/%3E%3Ccircle%20cx%3D%228.5%22%20cy%3D%22140%22%20r%3D%22.7%22%20fill%3D%22%231f4a36%22/%3E%20%3C/svg%3E") center top/24px 140px repeat-y;opacity:.6;
-    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);
-            mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);pointer-events:none}
-  .deco::before{left:12px}
-  .deco::after{right:12px;transform:scaleX(-1)}
-
   /* 지하철 호선 표시 */
   .subway{display:grid;gap:8px}
   .subway .st{display:flex;align-items:center;gap:8px;font-size:15px}
@@ -202,7 +193,7 @@
 </section>
 
 <!-- 오시는 길 -->
-<section class="fade deco">
+<section class="fade">
   <h2>오시는 길</h2>
   <p class="venue" id="venue"></p>
   <p class="addr" id="addr"></p>
