@@ -14,65 +14,65 @@
 <meta name="theme-color" content="#faf7f2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#faf7f2; --paper:#fffdf9; --ink:#3b3632; --soft:#8a817a; --line:#e7dfd4;
-    --accent:#b08d6e; --accent-soft:#efe5da; --sun:#c46a5a; --sat:#5a7bb0;
+    --bg:#fafaf8; --paper:#ffffff; --ink:#141414; --soft:#3f3f3f; --line:#d9dbd6;
+    --accent:#1f4a36; --accent-soft:#e8efea; --sun:#141414; --sat:#141414;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{background:#ece6dd;-webkit-text-size-adjust:100%}
+  html{background:#e6e8e4;-webkit-text-size-adjust:100%}
   body{font-family:'Gowun Batang',serif;color:var(--ink);line-height:1.8;
     max-width:440px;margin:0 auto;background:var(--bg);min-height:100vh;
     padding-bottom:env(safe-area-inset-bottom);word-break:keep-all}
   img{display:block;max-width:100%}
   a{color:inherit}
-  .en{font-family:'Cormorant Garamond',serif;letter-spacing:.18em}
+  .en{letter-spacing:.06em}
 
   /* placeholder for photos not yet uploaded */
-  .ph{background:linear-gradient(135deg,#efe7dc,#e3d7c8);display:flex;align-items:center;justify-content:center;color:#a8998a;font-size:12px;letter-spacing:.05em}
+  .ph{background:linear-gradient(135deg,#eceeea,#dde1dc);display:flex;align-items:center;justify-content:center;color:#6b6f6a;font-size:12px;letter-spacing:.05em}
   .ph svg{width:28px;height:28px;opacity:.6;margin-bottom:6px}
   .ph .phin{display:flex;flex-direction:column;align-items:center}
 
   /* cover */
   .cover{position:relative;text-align:center;padding:calc(48px + env(safe-area-inset-top)) 28px 40px}
-  .cover .date-top{font-size:13px;color:var(--soft)}
+  .cover .date-top{font-size:15px;color:var(--soft)}
   .cover .date-top b{display:block;font-size:30px;font-weight:400;color:var(--ink);letter-spacing:.12em;margin-bottom:2px}
   .cover .main{margin:28px auto 30px;width:100%;aspect-ratio:3/4;border-radius:200px 200px 6px 6px;overflow:hidden}
   .cover .main img{width:100%;height:100%;object-fit:cover}
   .cover .names{font-size:22px;letter-spacing:.08em}
-  .cover .names span{color:var(--accent);margin:0 10px;font-size:16px}
-  .cover .meta{margin-top:12px;font-size:14px;color:var(--soft)}
+  .cover .names span{color:var(--accent);margin:0 12px;font-size:18px}
+  .cover .meta{margin-top:12px;font-size:15px;color:var(--soft)}
 
   section{padding:64px 28px;text-align:center;border-top:1px solid var(--line)}
-  .label{font-size:12px;color:var(--accent);margin-bottom:8px}
-  h2{font-size:19px;font-weight:400;margin-bottom:32px;letter-spacing:.04em}
+    h2{font-size:20px;font-weight:700;color:var(--accent);margin-bottom:32px;letter-spacing:.04em}
+  h2::after{content:'';display:block;width:24px;height:1px;background:var(--accent);margin:14px auto 0}
 
   /* greeting */
-  .poem{font-size:14px;color:var(--soft);margin-bottom:32px;white-space:pre-line}
+  .poem{font-size:15px;color:var(--soft);margin-bottom:32px;white-space:pre-line}
   .greeting{font-size:15px;white-space:pre-line}
   .parents{margin-top:44px;display:grid;grid-template-columns:1fr 1px 1fr;gap:0 14px;align-items:stretch}
   .parents .sep{background:var(--line)}
   .parents .p{display:flex;flex-direction:column;align-items:center;gap:2px}
-  .parents .side{font-size:11px;color:var(--accent);letter-spacing:.2em;margin-bottom:6px}
-  .parents .pp{font-size:14px;color:var(--soft)}
-  .parents .rel{font-size:12px;color:var(--soft)}
+  .parents .side{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .parents .pp{font-size:15px;color:var(--ink)}
+  .parents .rel{font-size:13px;color:var(--soft)}
   .parents .who{font-size:19px;margin-top:4px}
   .transport a.inline{color:var(--accent);font-size:13px;display:inline-block;margin-top:4px}
   .contact-btn{margin-top:28px}
 
   /* calendar */
-  .cal-head{font-size:15px;margin-bottom:22px}
+  .cal-head{font-size:16px;margin-bottom:18px;font-weight:700}
   .cal{display:grid;grid-template-columns:repeat(7,1fr);row-gap:10px;font-size:14px;max-width:320px;margin:0 auto;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .cal .dow{font-size:12px;color:var(--soft)}
+  .cal .dow{font-size:13px;color:var(--soft);font-weight:700}
   .cal .d{height:34px;display:flex;align-items:center;justify-content:center}
   .cal .sun{color:var(--sun)} .cal .sat{color:var(--sat)}
   .cal .on span{background:var(--accent);color:#fff;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center}
   .dday{margin-top:30px;font-size:15px}
   .count{display:flex;justify-content:center;gap:14px;margin-top:16px}
   .count div{min-width:56px}
-  .count b{display:block;font-size:22px;font-weight:400;font-family:'Cormorant Garamond',serif}
-  .count small{font-size:11px;color:var(--soft);letter-spacing:.1em}
+  .count b{display:block;font-size:24px;font-weight:700;color:var(--accent)}
+  .count small{font-size:12px;color:var(--soft)}
   .dday em{font-style:normal;color:var(--accent)}
 
   /* gallery */
@@ -84,14 +84,14 @@
   .lb.open{display:flex}
   .lb .stage{width:100%;max-width:440px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;touch-action:pan-y}
   .lb .stage img,.lb .stage .ph{max-height:100%;width:100%;height:100%;object-fit:contain}
-  .lb .bar{color:#ddd;font-size:13px;margin-top:14px;font-family:'Cormorant Garamond',serif;letter-spacing:.15em}
+  .lb .bar{color:#ddd;font-size:14px;margin-top:14px;letter-spacing:.1em}
   .lb .x{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
   .lb .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:30px;padding:16px;cursor:pointer;opacity:.7}
   .lb .prev{left:0} .lb .next{right:0}
 
   /* location */
-  .venue{font-size:17px;margin-bottom:4px}
-  .addr{font-size:14px;color:var(--soft)}
+  .venue{font-size:18px;font-weight:700;margin-bottom:4px}
+  .addr{font-size:15px;color:var(--soft)}
   .mapimg{margin:24px 0 0;width:100%;aspect-ratio:4/3;border-radius:6px;overflow:hidden}
   .mapimg img{width:100%;height:100%;object-fit:cover}
   .maplinks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
@@ -99,11 +99,23 @@
   .maplinks i{width:16px;height:16px;border-radius:4px;display:inline-block}
   .transport{margin-top:36px;text-align:left;display:grid;gap:22px}
   .transport h3{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--accent)}
-  .transport p{font-size:14px;white-space:pre-line}
+  .transport p{font-size:15px;white-space:pre-line}
+
+  /* parking notice */
+  .parking{margin-top:32px;text-align:left;border:2px solid var(--accent);border-radius:10px;overflow:hidden;background:var(--paper)}
+  .parking .ph-head{background:var(--accent);color:#fff;font-weight:700;font-size:16px;padding:12px 18px;display:flex;align-items:center;gap:8px}
+  .parking .ph-head svg{width:20px;height:20px;flex-shrink:0}
+  .parking .ph-body{padding:16px 18px 18px}
+  .parking .warn{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:12px;white-space:pre-line}
+  .parking .warn em{font-style:normal;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  .parking .pname{font-size:17px;font-weight:700}
+  .parking .paddr{font-size:15px;color:var(--soft);margin-bottom:14px}
+  .parking .pbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .parking .pbtns .btn{border-radius:6px;padding:11px 8px}
 
   /* buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font:inherit;font-size:13px;color:var(--ink);cursor:pointer;text-decoration:none}
-  .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 
   /* accounts */
   .acc{border:1px solid var(--line);border-radius:8px;background:var(--paper);margin-bottom:10px;text-align:left;overflow:hidden}
@@ -115,7 +127,7 @@
   .acc .row .t{font-size:13px;line-height:1.6}
   .acc .row .t small{display:block;color:var(--soft)}
   .acc .row .btn{padding:6px 12px;font-size:12px;flex-shrink:0}
-  .note{font-size:14px;color:var(--soft);margin-bottom:28px;white-space:pre-line}
+  .note{font-size:15px;color:var(--soft);margin-bottom:28px;white-space:pre-line}
 
   /* extra links */
   .links{display:grid;gap:10px}
@@ -124,7 +136,7 @@
   .links a small{font-size:12px;color:var(--soft)}
   .links a::after{content:'→';color:var(--accent)}
 
-  footer{padding:56px 28px calc(56px + env(safe-area-inset-bottom));text-align:center;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+  footer{padding:56px 28px calc(56px + env(safe-area-inset-bottom));text-align:center;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
   footer .btns{display:flex;gap:8px;justify-content:center;margin-bottom:28px}
 
   .toast{position:fixed;left:50%;bottom:calc(40px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:rgba(40,36,32,.9);color:#fff;font-size:13px;padding:10px 18px;border-radius:999px;opacity:0;transition:.25s;pointer-events:none;z-index:60;white-space:nowrap}
@@ -140,7 +152,7 @@
 
 <!-- 커버 -->
 <header class="cover">
-  <p class="date-top"><b class="en" id="cv-date"></b><span id="cv-dow"></span></p>
+  <p class="date-top"><b id="cv-date"></b><span id="cv-dow"></span></p>
   <div class="main" id="cv-photo"></div>
   <p class="names" id="cv-names"></p>
   <p class="meta" id="cv-meta"></p>
@@ -148,7 +160,6 @@
 
 <!-- 인사말 -->
 <section class="fade">
-  <p class="label en">INVITATION</p>
   <h2>소중한 분들을 초대합니다</h2>
   <p class="poem" id="poem"></p>
   <p class="greeting" id="greeting"></p>
@@ -157,9 +168,8 @@
 
 <!-- 예식 일시 -->
 <section class="fade">
-  <p class="label en">WEDDING DAY</p>
   <h2 id="cal-title"></h2>
-  <p class="cal-head en" id="cal-month"></p>
+  <p class="cal-head" id="cal-month"></p>
   <div class="cal" id="cal"></div>
   <div class="count" id="count"></div>
   <p class="dday" id="dday"></p>
@@ -167,7 +177,6 @@
 
 <!-- 갤러리 -->
 <section class="fade" id="sec-gallery">
-  <p class="label en">GALLERY</p>
   <h2>우리의 순간들</h2>
   <div class="gallery" id="gallery"></div>
   <button class="btn more" id="more" hidden>사진 더보기</button>
@@ -175,19 +184,18 @@
 
 <!-- 오시는 길 -->
 <section class="fade">
-  <p class="label en">LOCATION</p>
   <h2>오시는 길</h2>
   <p class="venue" id="venue"></p>
   <p class="addr" id="addr"></p>
   <button class="btn" style="margin-top:12px" id="copy-addr">주소 복사</button>
   <div class="mapimg" id="mapimg"></div>
   <div class="maplinks" id="maplinks"></div>
+  <div class="parking" id="parking"></div>
   <div class="transport" id="transport"></div>
 </section>
 
 <!-- 마음 전하실 곳 -->
 <section class="fade" id="sec-acc">
-  <p class="label en">WITH HEART</p>
   <h2>마음 전하실 곳</h2>
   <p class="note" id="acc-note"></p>
   <div id="accounts"></div>
@@ -195,7 +203,6 @@
 
 <!-- 추가 링크 -->
 <section class="fade" id="sec-links">
-  <p class="label en">MORE</p>
   <h2 id="links-title"></h2>
   <div class="links" id="links"></div>
 </section>
@@ -257,9 +264,16 @@ const CONFIG = {
   transport: [
     { title: "지하철", text: "(예) ○호선 ○○역 ○번 출구 도보 ○분" },
     { title: "버스",   text: "(예) ○○번 ○○ 정류장 하차" },
-    { title: "주차",   text: "대한적십자사 주차장\n서울 중구 소파로 145",
-      link: { label: "주차장 위치 보기", url: "https://map.naver.com/p/search/" + encodeURIComponent("서울 중구 소파로 145") } }
   ],
+
+  // 🚗 주차 안내 (예식장 주차장이 아닌 별도 주차장 — 강조 박스로 표시됩니다)
+  parking: {
+    title: "주차는 별도 주차장을 이용해 주세요",
+    warn: "예식장 주차장이 협소하여 <em>하객분들의 주차가 어렵습니다.</em>\n차량으로 오시는 분은 아래 주차장을 이용해 주시기 바랍니다.",
+    name: "대한적십자사 주차장",
+    address: "서울 중구 소파로 145",
+    mapUrl: "https://map.naver.com/p/search/" + encodeURIComponent("서울 중구 소파로 145")
+  },
 
   accountNote:
 `참석이 어려우신 분들을 위해 기재했습니다.
@@ -296,28 +310,26 @@ window.__ph = __ph;
 
 const D = new Date(CONFIG.date);
 const DOW_KO = ['일','월','화','수','목','금','토'];
-const DOW_EN = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const pad = n => String(n).padStart(2,'0');
 const hh = D.getHours(), ampm = hh < 12 ? '오전' : '오후', h12 = hh % 12 || 12, mm = D.getMinutes();
 const timeKo = `${ampm} ${h12}시${mm ? ' ' + mm + '분' : ''}`;
 
 /* cover */
 $('cv-date').textContent = `${D.getFullYear()}.${pad(D.getMonth()+1)}.${pad(D.getDate())}`;
-$('cv-dow').textContent = `${DOW_EN[D.getDay()]}  ·  ${h12}:${pad(mm)} ${hh<12?'AM':'PM'}`;
+$('cv-dow').textContent = `${DOW_KO[D.getDay()]}요일 ${timeKo}`;
 $('cv-photo').innerHTML = photo(CONFIG.mainPhoto, '메인 사진', '메인 사진');
-$('cv-names').innerHTML = `${esc(CONFIG.groom.name)}<span>&amp;</span>${esc(CONFIG.bride.name)}`;
-$('cv-meta').textContent = `${D.getFullYear()}년 ${D.getMonth()+1}월 ${D.getDate()}일 ${DOW_KO[D.getDay()]}요일 ${timeKo}\n`;
-$('cv-meta').innerHTML += `<br>${esc(CONFIG.venue)}${CONFIG.hall ? ' ' + esc(CONFIG.hall) : ''}`;
+$('cv-names').innerHTML = `${esc(CONFIG.groom.name)}<span>·</span>${esc(CONFIG.bride.name)}`;
+$('cv-meta').textContent = `${CONFIG.venue}${CONFIG.hall ? ' ' + CONFIG.hall : ''}`;
 
 /* greeting */
 if (CONFIG.poem) $('poem').textContent = CONFIG.poem; else $('poem').hidden = true;
 $('greeting').textContent = CONFIG.greeting;
-const pLine = (p, side) => `<div class="p"><span class="side en">${side}</span><span class="pp">${esc(p.father)} · ${esc(p.mother)}</span><span class="rel">의 ${esc(p.order)}</span><span class="who">${esc(p.first)}</span></div>`;
-$('parents').innerHTML = pLine(CONFIG.groom, 'GROOM') + '<span class="sep"></span>' + pLine(CONFIG.bride, 'BRIDE');
+const pLine = (p, side) => `<div class="p"><span class="side">${side}</span><span class="pp">${esc(p.father)} · ${esc(p.mother)}</span><span class="rel">의 ${esc(p.order)}</span><span class="who">${esc(p.first)}</span></div>`;
+$('parents').innerHTML = pLine(CONFIG.groom, '신랑측') + '<span class="sep"></span>' + pLine(CONFIG.bride, '신부측');
 
 /* calendar */
 $('cal-title').textContent = `${D.getFullYear()}년 ${D.getMonth()+1}월 ${D.getDate()}일 ${DOW_KO[D.getDay()]}요일 ${timeKo}`;
-$('cal-month').textContent = D.toLocaleString('en', {month:'long'}).toUpperCase();
+$('cal-month').textContent = `${D.getFullYear()}년 ${D.getMonth()+1}월`;
 (function(){
   const y = D.getFullYear(), m = D.getMonth();
   const first = new Date(y, m, 1).getDay(), days = new Date(y, m+1, 0).getDate();
@@ -338,8 +350,8 @@ function tick(){
     return;
   }
   const s = Math.floor(diff/1000);
-  const parts = [['DAYS',Math.floor(s/86400)],['HOUR',Math.floor(s%86400/3600)],['MIN',Math.floor(s%3600/60)],['SEC',s%60]];
-  $('count').innerHTML = parts.map(([k,v])=>`<div><b>${k==='DAYS'?v:pad(v)}</b><small class="en">${k}</small></div>`).join('');
+  const parts = [['일',Math.floor(s/86400)],['시간',Math.floor(s%86400/3600)],['분',Math.floor(s%3600/60)],['초',s%60]];
+  $('count').innerHTML = parts.map(([k,v])=>`<div><b>${k==='일'?v:pad(v)}</b><small>${k}</small></div>`).join('');
   const dday = Math.ceil((new Date(D.getFullYear(),D.getMonth(),D.getDate()) - new Date(new Date().toDateString()))/864e5);
   $('dday').innerHTML = `${esc(g)} ♥ ${esc(b)}의 결혼식이 <em>${dday}일</em> 남았습니다.`;
 }
@@ -375,6 +387,16 @@ $('maplinks').innerHTML = CONFIG.maps.map(m=>`<a href="${esc(m.url)}" target="_b
 if (CONFIG.maps.length % 2) $('maplinks').style.gridTemplateColumns = '1fr';
 $('transport').innerHTML = CONFIG.transport.map(t=>`<div><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p>${t.link?`<a class="inline" href="${esc(t.link.url)}" target="_blank" rel="noopener">${esc(t.link.label)} →</a>`:''}</div>`).join('');
 
+/* parking */
+const PK = CONFIG.parking;
+if (PK){
+  const CAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17h14M6 17v2M18 17v2M4 13l2-5a2 2 0 0 1 2-1.3h8A2 2 0 0 1 18 8l2 5v4H4z"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>';
+  $('parking').innerHTML = `<div class="ph-head">${CAR}${esc(PK.title)}</div><div class="ph-body">
+    <p class="warn">${PK.warn}</p>
+    <p class="pname">${esc(PK.name)}</p><p class="paddr">${esc(PK.address)}</p>
+    <div class="pbtns"><a class="btn solid" href="${esc(PK.mapUrl)}" target="_blank" rel="noopener">주차장 지도 보기</a><button class="btn" data-copy-addr="${esc(PK.address)}">주차장 주소 복사</button></div></div>`;
+} else $('parking').hidden = true;
+
 /* accounts */
 const accBlock = (title, list) => list.length ? `<details class="acc"><summary>${title}</summary>${list.map(a=>`<div class="row"><div class="t">${esc(a.bank)} ${esc(a.number)}<small>${esc(a.who)}</small></div><button class="btn" data-copy="${esc(a.bank+' '+a.number)}">복사</button></div>`).join('')}</details>` : '';
 const accHtml = accBlock('신랑측 계좌번호', CONFIG.accounts.groom||[]) + accBlock('신부측 계좌번호', CONFIG.accounts.bride||[]);
@@ -398,7 +420,7 @@ async function copy(text, okMsg){
     ta.remove(); toast(ok ? okMsg : '복사가 지원되지 않아요: ' + text);
   }
 }
-document.addEventListener('click', e => { const b = e.target.closest('[data-copy]'); if (b) copy(b.dataset.copy, '계좌번호가 복사되었어요'); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-copy]'); if (b) copy(b.dataset.copy, '계좌번호가 복사되었어요'); const a = e.target.closest('[data-copy-addr]'); if (a) copy(a.dataset.copyAddr, '주차장 주소가 복사되었어요'); });
 $('copy-addr').onclick = () => copy(CONFIG.address, '주소가 복사되었어요');
 $('share').onclick = () => copy(location.href.split('#')[0], '청첩장 링크가 복사되었어요');
 
