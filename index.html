@@ -39,13 +39,40 @@
   .cover{position:relative;text-align:center;padding:calc(48px + env(safe-area-inset-top)) 28px 40px}
   .cover .date-top{font-size:15px;color:var(--soft)}
   .cover .date-top b{display:block;font-size:30px;font-weight:500;color:var(--ink);letter-spacing:.12em;margin-bottom:2px}
-  .cover .main{margin:28px auto 30px;width:100%;aspect-ratio:3/4;border-radius:200px 200px 6px 6px;overflow:hidden}
-  .cover .main img{width:100%;height:100%;object-fit:cover}
+  .cover .main{position:relative;margin:18px -18px 22px;aspect-ratio:725/1042}
+  .cover .photo-oval{position:absolute;left:21.4%;top:25.1%;width:58.2%;height:51.9%;border-radius:50%;overflow:hidden;background:#e6e8e4}
+  .cover .photo-oval img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .cover .wreath{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
   .cover .names{font-size:24px;font-weight:500}
   .cover .names span{color:var(--accent);margin:0 12px;font-size:18px}
   .cover .meta{margin-top:12px;font-size:15px;color:var(--soft)}
 
+  section,header.cover{position:relative;overflow:hidden}
   section{padding:64px 28px;text-align:center;border-top:1px solid var(--line)}
+  /* 제목 양옆 일러스트 */
+  h2{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+  h2 .fl{height:26px;width:auto}
+  h2 .fl.r{transform:scaleX(-1)}
+  h2::after{flex-basis:100%;width:auto!important;height:1px;margin:12px 0 0!important;background:linear-gradient(var(--accent),var(--accent)) center/24px 1px no-repeat!important}
+  h2 .fl.solid{height:20px}
+  .sub{font-size:16px;margin:-14px 0 24px;color:var(--ink)}
+  /* 여기저기 흩어진 일러스트 */
+  .sc{position:absolute;pointer-events:none;opacity:.9;height:auto}
+  .sc.angel{width:92px;top:18px;left:10px;transform:rotate(-8deg)}
+  .sc.starA{width:20px;top:40px;right:34px;transform:rotate(12deg)}
+  .sc.starB{width:16px;top:84px;right:66px}
+  .sc.kiss{display:block;position:static;width:150px;margin:44px auto 0;opacity:1}
+  .sec-cal{padding-bottom:120px}
+  .sc.dog{width:84px;bottom:20px;left:50%;margin-left:-60px}
+  .sc.starC{width:16px;bottom:86px;left:50%;margin-left:40px;transform:rotate(-10deg)}
+  .sc.starD{width:11px;bottom:62px;left:50%;margin-left:66px}
+  .sc.horse{width:96px;top:20px;right:8px;transform:rotate(-6deg)}
+  .sc.house{width:74px;top:14px;left:10px;transform:rotate(-5deg)}
+  .sc.glass{width:40px;top:20px;right:18px;transform:rotate(10deg)}
+  .sc.apples{width:58px;bottom:18px;right:14px;transform:rotate(6deg)}
+  .sc.hand{width:84px;top:22px;right:6px;transform:rotate(8deg)}
+  .sc.scroll{display:block;position:static;width:54px;margin:0 auto 18px;opacity:1}
+  .sc.spiral{width:46px;top:8px;left:12px;transform:rotate(-12deg)}
     h2{font-size:21px;font-weight:500;color:var(--accent);margin-bottom:32px;letter-spacing:.04em}
   h2::after{content:'';display:block;width:24px;height:1px;background:var(--accent);margin:14px auto 0}
 
@@ -111,7 +138,9 @@
 
   /* parking notice — editorial, no box */
   .parking{margin-top:44px;padding:30px 0 28px;border-top:2px solid var(--accent);border-bottom:1px solid var(--line);text-align:center}
-  .parking .pk-label{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.2em;margin-bottom:10px}
+  .parking .pk-label{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.2em;margin-bottom:10px}
+  .parking .pk-label img{height:18px;width:auto}
+  .parking .pk-label img.r{transform:scaleX(-1)}
   .parking .pk-title{white-space:pre-line;font-family:'Noto Serif KR',serif;font-size:21px;font-weight:600;line-height:1.5;margin-bottom:14px}
   .parking .warn{font-size:15px;color:var(--ink);white-space:pre-line;margin-bottom:22px}
   .parking .warn em{font-style:normal;font-weight:600;box-shadow:inset 0 -.45em 0 var(--accent-soft)}
@@ -146,7 +175,7 @@
   .links a small{font-size:12px;color:var(--soft)}
   .links a::after{content:'→';color:var(--accent)}
 
-  footer{padding:56px 28px calc(56px + env(safe-area-inset-bottom));text-align:center;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+  footer{position:relative;overflow:hidden;padding:56px 28px calc(56px + env(safe-area-inset-bottom));text-align:center;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
   footer .btns{display:flex;gap:8px;justify-content:center;margin-bottom:28px}
 
   .toast{position:fixed;left:50%;bottom:calc(40px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:rgba(40,36,32,.9);color:#fff;font-size:13px;padding:10px 18px;border-radius:999px;opacity:0;transition:.25s;pointer-events:none;z-index:60;white-space:nowrap}
@@ -162,23 +191,27 @@
 
 <!-- 커버 -->
 <header class="cover">
+  <img class="sc angel" src="images/deco/angel.png" alt="" aria-hidden="true"><img class="sc starA" src="images/deco/star_a.png" alt="" aria-hidden="true"><img class="sc starB" src="images/deco/star_b.png" alt="" aria-hidden="true">
   <p class="date-top"><b id="cv-date"></b><span id="cv-dow"></span></p>
-  <div class="main" id="cv-photo"></div>
+  <div class="main"><div class="photo-oval" id="cv-photo"></div><img class="wreath" src="images/deco/wreath.png" alt="" aria-hidden="true"></div>
   <p class="names" id="cv-names"></p>
   <p class="meta" id="cv-meta"></p>
 </header>
 
 <!-- 인사말 -->
 <section class="fade">
-  <h2>소중한 분들을 초대합니다</h2>
+  <h2><img class="fl" src="images/deco/flower.png" alt="" aria-hidden="true"><span>소중한 분들을 초대합니다</span><img class="fl r" src="images/deco/flower.png" alt="" aria-hidden="true"></h2>
   <p class="poem" id="poem"></p>
   <p class="greeting" id="greeting"></p>
   <div class="parents" id="parents"></div>
+  <img class="sc kiss" src="images/deco/kissbirds.png" alt="" aria-hidden="true">
 </section>
 
 <!-- 예식 일시 -->
-<section class="fade">
-  <h2 id="cal-title"></h2>
+<section class="fade sec-cal">
+  <img class="sc dog" src="images/deco/dog.png" alt="" aria-hidden="true"><img class="sc starC" src="images/deco/star_b.png" alt="" aria-hidden="true"><img class="sc starD" src="images/deco/star_a.png" alt="" aria-hidden="true">
+  <h2><img class="fl" src="images/deco/star_a.png" alt="" aria-hidden="true"><span>예식 일시</span><img class="fl r" src="images/deco/star_b.png" alt="" aria-hidden="true"></h2>
+  <p class="sub" id="cal-title"></p>
   <p class="cal-head" id="cal-month"></p>
   <div class="cal" id="cal"></div>
   <div class="count" id="count"></div>
@@ -187,14 +220,16 @@
 
 <!-- 갤러리 -->
 <section class="fade" id="sec-gallery">
-  <h2>우리의 순간들</h2>
+  <img class="sc horse" src="images/deco/horse.png" alt="" aria-hidden="true">
+  <h2><img class="fl solid" src="images/deco/cclover.png" alt="" aria-hidden="true"><span>우리의 순간들</span><img class="fl r solid" src="images/deco/cclover.png" alt="" aria-hidden="true"></h2>
   <div class="gallery" id="gallery"></div>
   <button class="btn more" id="more" hidden>사진 더보기</button>
 </section>
 
 <!-- 오시는 길 -->
 <section class="fade">
-  <h2>오시는 길</h2>
+  <img class="sc house" src="images/deco/housewreath.png" alt="" aria-hidden="true">
+  <h2><img class="fl solid" src="images/deco/bow2.png" alt="" aria-hidden="true"><span>오시는 길</span><img class="fl r solid" src="images/deco/bow2.png" alt="" aria-hidden="true"></h2>
   <p class="venue" id="venue"></p>
   <p class="addr" id="addr"></p>
   <button class="tlink" id="copy-addr">주소 복사</button>
@@ -206,18 +241,21 @@
 
 <!-- 마음 전하실 곳 -->
 <section class="fade" id="sec-acc">
-  <h2>마음 전하실 곳</h2>
+  <img class="sc hand" src="images/deco/hand.png" alt="" aria-hidden="true">
+  <h2><img class="fl" src="images/deco/crown.png" alt="" aria-hidden="true"><span>마음 전하실 곳</span><img class="fl r" src="images/deco/crown.png" alt="" aria-hidden="true"></h2>
   <p class="note" id="acc-note"></p>
   <div id="accounts"></div>
 </section>
 
 <!-- 추가 링크 -->
 <section class="fade" id="sec-links">
-  <h2 id="links-title"></h2>
+  <img class="sc spiral" src="images/deco/spiral.png" alt="" aria-hidden="true">
+  <h2><img class="fl solid" src="images/deco/bow.png" alt="" aria-hidden="true"><span id="links-title"></span><img class="fl r solid" src="images/deco/bow.png" alt="" aria-hidden="true"></h2>
   <div class="links" id="links"></div>
 </section>
 
 <footer>
+  <img class="sc scroll" src="images/deco/scroll.png" alt="" aria-hidden="true"><img class="sc apples" src="images/deco/apples.png" alt="" aria-hidden="true">
   <div class="btns">
     <button class="btn solid" id="share">청첩장 링크 복사</button>
   </div>
@@ -405,7 +443,7 @@ $('transport').innerHTML = CONFIG.transport.map(t=>`<div><h3>${esc(t.title)}</h3
 const PK = CONFIG.parking;
 if (PK){
   // const CAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17h14M6 17v2M18 17v2M4 13l2-5a2 2 0 0 1 2-1.3h8A2 2 0 0 1 18 8l2 5v4H4z"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>';
-  $('parking').innerHTML = `<p class="pk-label">주차 안내</p><p class="pk-title">${esc(PK.title)}</p>
+  $('parking').innerHTML = `<p class="pk-label"><img src="images/deco/spade.png" alt="" aria-hidden="true">주차 안내<img class="r" src="images/deco/spade.png" alt="" aria-hidden="true"></p><p class="pk-title">${esc(PK.title)}</p>
     <p class="warn">${PK.warn}</p>
     <p class="pname">${esc(PK.name)}</p><p class="paddr">${esc(PK.address)}</p>
     <div class="pk-links"><a href="${esc(PK.mapUrl)}" target="_blank" rel="noopener">지도 보기 →</a><button data-copy-addr="${esc(PK.address)}">주소 복사</button></div>${PK.thanks ? `<p class="thanks">${esc(PK.thanks)}</p>` : ''}`;
