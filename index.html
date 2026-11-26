@@ -11,18 +11,18 @@
 <meta property="og:description" content="2027년 4월 3일 토요일 오전 11시 · 문학의 집·서울">
 <meta property="og:image" content="https://i-said-yess-270403.github.io/images/og.jpg">
 <meta property="og:url" content="https://i-said-yess-270403.github.io/">
-<meta name="theme-color" content="#ebe3d6">
+<meta name="theme-color" content="#f8f4eb">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
 <style>
   :root{
-    --bg:#ebe3d6; --paper:rgba(255,252,245,.45); --ink:#2a2622; --soft:#5b544c; --line:#d3c9b8;
-    --accent:#3e4a37; --accent-soft:#ddd3b8; --sun:#2a2622; --sat:#2a2622;
+    --bg:#f8f4eb; --paper:rgba(255,252,245,.45); --ink:#2a2622; --soft:#5b544c; --line:#e2dacb;
+    --accent:#3e4a37; --accent-soft:#e9e1cc; --sun:#2a2622; --sat:#2a2622;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{background:#ddd4c5 url(images/paper.jpg) center/1440px repeat;-webkit-text-size-adjust:100%}
+  html{background:#efe9de url(images/paper.jpg) center/1440px repeat;-webkit-text-size-adjust:100%}
   body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;color:var(--ink);line-height:1.85;letter-spacing:-.01em;font-weight:400;
     max-width:440px;margin:0 auto;background:var(--bg) url(images/paper.jpg) center top/1440px repeat;min-height:100vh;box-shadow:0 0 30px rgba(80,60,30,.12);
     padding-bottom:env(safe-area-inset-bottom);word-break:keep-all}
@@ -31,7 +31,7 @@
   .serif,h2,.cover .date-top b,.cover .names,.venue,.parents .who,.cal-head,.count b{font-family:'Noto Serif KR',serif;letter-spacing:0}
 
   /* placeholder for photos not yet uploaded */
-  .ph{background:linear-gradient(135deg,#e6dece,#d9cfbd);display:flex;align-items:center;justify-content:center;color:#8a7f70;font-size:12px;letter-spacing:.05em}
+  .ph{background:linear-gradient(135deg,#efe9dd,#e4dccd);display:flex;align-items:center;justify-content:center;color:#8a7f70;font-size:12px;letter-spacing:.05em}
   .ph svg{width:28px;height:28px;opacity:.6;margin-bottom:6px}
   .ph .phin{display:flex;flex-direction:column;align-items:center}
 
@@ -45,9 +45,9 @@
     border-width:calc(var(--fw)*420/1064) calc(var(--fw)*80/1064) calc(var(--fw)*140/1064);
     border-image:url(images/deco/frame.png) 420 80 140 / calc(var(--fw)*420/1064) calc(var(--fw)*80/1064) calc(var(--fw)*140/1064) stretch;
     padding:0 calc(var(--fw)*22/1064) calc(var(--fw)*6/1064)}
-  .cover .photo-oval{aspect-ratio:3/4;overflow:hidden;background:#ddd4c5}
+  .cover .photo-oval{aspect-ratio:3/4;overflow:hidden;background:#ebe5d9}
   .cover .photo-oval img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
-  .cover .swallows{display:block;width:120px;margin:26px auto 0;opacity:.9}
+  .swallows-end{display:block;width:150px;margin:56px auto 0;opacity:.9}
   .cover .names{font-size:24px;font-weight:500}
   .cover .names span{color:var(--accent);margin:0 12px;font-size:18px}
   .cover .meta{margin-top:12px;font-size:15px;color:var(--soft)}
@@ -196,12 +196,11 @@
 
 <!-- 커버 -->
 <header class="cover">
-  <img class="sc angel" src="images/deco/angel.png" alt="" aria-hidden="true"><img class="sc starA" src="images/deco/star_a.png" alt="" aria-hidden="true"><img class="sc starB" src="images/deco/star_b.png" alt="" aria-hidden="true">
+  <img class="sc starA" src="images/deco/star_a.png" alt="" aria-hidden="true"><img class="sc starB" src="images/deco/star_b.png" alt="" aria-hidden="true">
   <p class="date-top"><b id="cv-date"></b><span id="cv-dow"></span></p>
   <div class="main"><div class="photo-oval" id="cv-photo"></div></div>
   <p class="names" id="cv-names"></p>
   <p class="meta" id="cv-meta"></p>
-  <img class="swallows" src="images/deco/swallows.png" alt="" aria-hidden="true">
 </header>
 
 <!-- 인사말 -->
@@ -243,6 +242,7 @@
   <div class="maplinks" id="maplinks"></div>
   <div class="parking" id="parking"></div>
   <div class="transport" id="transport"></div>
+  <img class="swallows-end" src="images/deco/swallows.png" alt="" aria-hidden="true">
 </section>
 
 <!-- 마음 전하실 곳 -->
@@ -346,11 +346,8 @@ const CONFIG = {
     bride: []
   },
 
-  linksTitle: "함께 보면 좋은 곳",
-  links: [                                     // 비워 두면([]) 섹션이 숨겨집니다
-    // { title: "예식 생중계", desc: "유튜브 라이브", url: "https://youtube.com/..." },
-    { title: "문학의 집·서울 안내", desc: "예식장 위치 · 주변 정보", url: "https://map.naver.com/p/search/" + encodeURIComponent("문학의집 서울") }
-  ],
+  linksTitle: "",
+  links: [],                                   // 외부 링크가 필요하면 { title, desc, url } 형식으로 추가
 
   closing: "함께해 주시는 모든 분들께 진심으로 감사드립니다."
 };
