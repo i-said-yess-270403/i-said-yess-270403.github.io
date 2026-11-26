@@ -72,11 +72,11 @@
   .sc.dog{width:84px;bottom:20px;left:50%;margin-left:-60px}
   .sc.starC{width:16px;bottom:86px;left:50%;margin-left:40px;transform:rotate(-10deg)}
   .sc.starD{width:11px;bottom:62px;left:50%;margin-left:66px}
-  .sc.horse{width:96px;top:20px;right:8px;transform:rotate(-6deg)}
+  .sc.tulip{width:54px;top:12px;right:18px;transform:rotate(6deg)}
   .sc.house{width:74px;top:14px;left:10px;transform:rotate(-5deg)}
   .sc.glass{width:40px;top:20px;right:18px;transform:rotate(10deg)}
   .sc.apples{width:58px;bottom:18px;right:14px;transform:rotate(6deg)}
-  .sc.hand{width:84px;top:22px;right:6px;transform:rotate(8deg)}
+  .sc.hand{width:62px;top:8px;right:8px;transform:rotate(8deg)}
   .sc.scroll{display:block;position:static;width:54px;margin:0 auto 18px;opacity:1}
   .sc.spiral{width:46px;top:8px;left:12px;transform:rotate(-12deg)}
     h2{font-size:21px;font-weight:500;color:var(--ink);margin-bottom:32px;letter-spacing:.04em}
@@ -228,7 +228,7 @@
 
 <!-- 갤러리 -->
 <section class="fade" id="sec-gallery">
-  <img class="sc horse" src="images/deco/horse.png" alt="" aria-hidden="true">
+  <img class="sc tulip" src="images/deco/tulip.png" alt="" aria-hidden="true">
   <h2><img class="fl solid" src="images/deco/cclover.png" alt="" aria-hidden="true"><span>우리의 순간들</span><img class="fl r solid" src="images/deco/cclover.png" alt="" aria-hidden="true"></h2>
   <div class="gallery" id="gallery"></div>
   <button class="btn more" id="more" hidden>사진 더보기</button>
@@ -264,10 +264,6 @@
 </section>
 
 <footer>
-  <img class="sc scroll" src="images/deco/scroll.png" alt="" aria-hidden="true"><img class="sc apples" src="images/deco/apples.png" alt="" aria-hidden="true">
-  <div class="btns">
-    <button class="btn solid" id="share">청첩장 링크 복사</button>
-  </div>
   <p id="closing"></p>
 </footer>
 
@@ -457,8 +453,10 @@ if (PK){
 
 /* accounts */
 const accBlock = (title, list) => list.length ? `<details class="acc"><summary>${title}</summary>${list.map(a=>`<div class="row"><div class="t">${esc(a.bank)} ${esc(a.number)}<small>${esc(a.who)}</small></div><button class="btn" data-copy="${esc(a.bank+' '+a.number)}">복사</button></div>`).join('')}</details>` : '';
-const accHtml = accBlock('신랑측 계좌번호', CONFIG.accounts.groom||[]) + accBlock('신부측 계좌번호', CONFIG.accounts.bride||[]);
-if (accHtml) { $('accounts').innerHTML = accHtml; $('acc-note').textContent = CONFIG.accountNote; } else $('sec-acc').hidden = true;
+const accEmpty = title => `<details class="acc"><summary>${title}</summary><div class="row"><div class="t"><small>계좌번호는 추후 안내드릴 예정입니다.</small></div></div></details>`;
+const accPart = (title, list) => (list && list.length) ? accBlock(title, list) : accEmpty(title);
+$('accounts').innerHTML = accPart('신랑측 계좌번호', CONFIG.accounts.groom) + accPart('신부측 계좌번호', CONFIG.accounts.bride);
+$('acc-note').textContent = CONFIG.accountNote;
 
 /* extra links */
 if (CONFIG.links && CONFIG.links.length){
@@ -480,7 +478,6 @@ async function copy(text, okMsg){
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-copy]'); if (b) copy(b.dataset.copy, '계좌번호가 복사되었어요'); const a = e.target.closest('[data-copy-addr]'); if (a) copy(a.dataset.copyAddr, '주차장 주소가 복사되었어요'); });
 $('copy-addr').onclick = () => copy(CONFIG.address, '주소가 복사되었어요');
-$('share').onclick = () => copy(location.href.split('#')[0], '청첩장 링크가 복사되었어요');
 
 /* fade-in */
 const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12}) : null;
