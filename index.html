@@ -36,21 +36,21 @@
   .ph .phin{display:flex;flex-direction:column;align-items:center}
 
   /* cover */
-  .cover{position:relative;text-align:center;padding:calc(48px + env(safe-area-inset-top)) 28px 40px}
-  .cover .date-top{font-size:15px;color:var(--soft)}
-  .cover .date-top b{display:block;font-size:30px;font-weight:500;color:var(--ink);letter-spacing:.12em;margin-bottom:2px}
+  .cover{position:relative;text-align:center;padding:calc(26px + env(safe-area-inset-top)) 18px 36px}
+  .cover .date-top{font-size:14px;color:var(--soft);margin:0 0 18px}
+  .cover .date-top b{display:block;font-size:26px;font-weight:500;color:var(--ink);letter-spacing:.12em;margin-bottom:2px}
   /* 메인 사진: 비둘기·리본 테두리 (위/아래 장식은 그대로, 옆 리본만 늘어남) */
-  .cover .main{--fw:min(calc(100vw - 36px),404px);width:var(--fw);margin:14px auto 6px;
+  .cover .main{--fw:min(calc(100vw - 36px),404px);width:var(--fw);margin:0 auto;
     border-style:solid;border-color:transparent;
     border-width:calc(var(--fw)*420/1064) calc(var(--fw)*80/1064) calc(var(--fw)*140/1064);
     border-image:url(images/deco/frame.png) 420 80 140 / calc(var(--fw)*420/1064) calc(var(--fw)*80/1064) calc(var(--fw)*140/1064) stretch;
-    padding:0 calc(var(--fw)*22/1064) calc(var(--fw)*6/1064)}
+    padding:0 calc(var(--fw)*30/1064) 0}
   .cover .photo-oval{aspect-ratio:3/4;overflow:hidden;background:#ebe5d9}
   .cover .photo-oval img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
   .swallows-end{display:block;width:150px;margin:56px auto 0;opacity:.9}
-  .cover .names{font-size:24px;font-weight:500}
+  .cover .names{font-size:22px;font-weight:500;margin-top:20px}
   .cover .names span{color:var(--accent);margin:0 12px;font-size:18px}
-  .cover .meta{margin-top:12px;font-size:15px;color:var(--soft)}
+  .cover .meta{margin:4px 0 14px;font-size:14px;color:var(--soft)}
 
   section,header.cover{position:relative;overflow:hidden}
   section{padding:64px 28px;text-align:center;border-top:1px solid var(--line)}
@@ -64,8 +64,9 @@
   /* 여기저기 흩어진 일러스트 */
   .sc{position:absolute;pointer-events:none;opacity:.9;height:auto}
   .sc.angel{width:92px;top:18px;left:10px;transform:rotate(-8deg)}
-  .sc.starA{width:20px;top:40px;right:34px;transform:rotate(12deg)}
-  .sc.starB{width:16px;top:84px;right:66px}
+  .sc.starA{width:18px;top:26px;right:30px;transform:rotate(12deg)}
+  .sc.starB{width:13px;top:58px;right:58px}
+  .sc.starE{width:12px;top:34px;left:34px;transform:rotate(-14deg)}
   .sc.kiss{display:block;position:static;width:150px;margin:44px auto 0;opacity:1}
   .sec-cal{padding-bottom:120px}
   .sc.dog{width:84px;bottom:20px;left:50%;margin-left:-60px}
@@ -196,15 +197,17 @@
 
 <!-- 커버 -->
 <header class="cover">
-  <img class="sc starA" src="images/deco/star_a.png" alt="" aria-hidden="true"><img class="sc starB" src="images/deco/star_b.png" alt="" aria-hidden="true">
-  <p class="date-top"><b id="cv-date"></b><span id="cv-dow"></span></p>
-  <div class="main"><div class="photo-oval" id="cv-photo"></div></div>
-  <p class="names" id="cv-names"></p>
-  <p class="meta" id="cv-meta"></p>
+  <div class="main">
+    <p class="date-top"><b id="cv-date"></b><span id="cv-dow"></span></p>
+    <div class="photo-oval" id="cv-photo"></div>
+    <p class="names" id="cv-names"></p>
+    <p class="meta" id="cv-meta"></p>
+  </div>
 </header>
 
 <!-- 인사말 -->
 <section class="fade">
+  <img class="sc starA" src="images/deco/star_a.png" alt="" aria-hidden="true"><img class="sc starB" src="images/deco/star_b.png" alt="" aria-hidden="true"><img class="sc starE" src="images/deco/star_b.png" alt="" aria-hidden="true">
   <h2><img class="fl" src="images/deco/flower.png" alt="" aria-hidden="true"><span>소중한 분들을 초대합니다</span><img class="fl r" src="images/deco/flower.png" alt="" aria-hidden="true"></h2>
   <p class="poem" id="poem"></p>
   <p class="greeting" id="greeting"></p>
